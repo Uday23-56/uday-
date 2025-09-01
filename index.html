@@ -3,65 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel = "stylesheet" href = "style.css">
-    <!-- <link rel = "stylesheet" href = "about.css"> -->
-    <title>PROJOSHOP </title>
+    <title>Daily Goal Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-<div class="wrapper">
+    <div class="container">
+        <header class="header">
+            <h1><i class="fas fa-bullseye"></i> Daily Goal Tracker</h1>
+            <p class="subtitle">Track your progress, achieve your dreams</p>
+        </header>
 
-
-
-
-
-    <nav class = "nav">
-        <div class="nav-logo">
-            <p>PROJOSHOP</p>
+        <div class="stats-container">
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-tasks"></i>
+                </div>
+                <div class="stat-content">
+                    <h3 id="totalGoals">0</h3>
+                    <p>Total Goals</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <div class="stat-content">
+                    <h3 id="completedGoals">0</h3>
+                    <p>Completed</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-percentage"></i>
+                </div>
+                <div class="stat-content">
+                    <h3 id="completionRate">0%</h3>
+                    <p>Success Rate</p>
+                </div>
+            </div>
         </div>
-        <div class="nav-menu">
-        <ul>
-            <li><a href = "#" class = "link active">Home</a></li>
-            <li><a href = "#" class = "link">Contact</a></li>
-            <li><a href = "about.html" class = "link">About</a></li>
+
+        <div class="add-goal-section">
+            <h2>Add New Goal</h2>
+            <form id="goalForm" class="goal-form">
+                <div class="form-group">
+                    <input type="text" id="goalTitle" placeholder="What's your goal today?" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <select id="goalCategory" required>
+                            <option value="">Select Category</option>
+                            <option value="work">Work</option>
+                            <option value="health">Health</option>
+                            <option value="learning">Learning</option>
+                            <option value="personal">Personal</option>
+                            <option value="fitness">Fitness</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <select id="goalPriority" required>
+                            <option value="">Priority</option>
+                            <option value="low">Low</option>
+                            <option value="medium">Medium</option>
+                            <option value="high">High</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <textarea id="goalDescription" placeholder="Add more details about your goal (optional)"></textarea>
+                </div>
+                <button type="submit" class="btn-primary">
+                    <i class="fas fa-plus"></i> Add Goal
+                </button>
+            </form>
+        </div>
+
+        <div class="goals-section">
+            <div class="section-header">
+                <h2>Today's Goals</h2>
+                <div class="filter-controls">
+                    <select id="categoryFilter">
+                        <option value="">All Categories</option>
+                        <option value="work">Work</option>
+                        <option value="health">Health</option>
+                        <option value="learning">Learning</option>
+                        <option value="personal">Personal</option>
+                        <option value="fitness">Fitness</option>
+                    </select>
+                    <select id="priorityFilter">
+                        <option value="">All Priorities</option>
+                        <option value="high">High Priority</option>
+                        <option value="medium">Medium Priority</option>
+                        <option value="low">Low Priority</option>
+                    </select>
+                </div>
+            </div>
             
-        </ul>
+            <div id="goalsList" class="goals-list">
+                <!-- Goals will be dynamically added here -->
+            </div>
+        </div>
 
+        <div class="completed-section">
+            <h2>Completed Goals</h2>
+            <div id="completedGoalsList" class="completed-goals-list">
+                <!-- Completed goals will be shown here -->
+            </div>
         </div>
-        <div class="nav-button">
-             <a href="signin.html" class="btn white-btn">Sign In</a>
-             <a href="login.html" class="btn">Register</a>
-             <a href="login.html">
-             <button class="project-btn">Projects</button>
-             </a>
-
-            
-        </div>
-        <div class="nav-menu-btn">
-            <i class = "bx bx-menu"></i>
-
-            
-        </div>
-    </nav>
-    <section class="landing">
-        <div class="landing-content">
-            <h1>Welcome to <span>PROJOSHOP</span></h1>
-            <p class="tagline">Your one-stop platform to explore, showcase, and collaborate on amazing projects 🚀</p>
-            <p class="details">
-                PROJOSHOP is designed to connect students, developers, and innovators.  
-                Register, showcase your projects, or find inspiration from others.  
-                Start your journey today and bring your ideas to life!
-            </p>
-            <a href="login.html" class="btn get-started">Get Started</a>
-        </div>
-        <div class="landing-image">
-        <img src="images/Hero.png" alt="Project showcase">
-         
     </div>
-    </section>
-    </div>
 
-    
-
+    <script src="script.js"></script>
 </body>
 </html>
